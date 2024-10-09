@@ -1,0 +1,29 @@
+name: Deploy
+on: [push,workflow_dispatch]
+
+# on:
+#     - push
+#     - workflow_dispatch
+# - push
+#     - workflow_dispatch    - Represeting list of item
+jobs: 
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Get Code"
+              uses: actions/checkout@v4
+            #   run: |
+            #      echo "Hello, world!"
+            #      echo "Bye Bye"
+            - name: "Intall Node 20"
+              uses: actions/setup-node@v4
+              with: 
+                node-version: 20
+            - name: print node version
+              run: node -v
+            - name: Install dependencies
+              run: npm ci
+            - name: Run Tests
+              run: npm run test
+
+
