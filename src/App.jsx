@@ -6,7 +6,7 @@ function App() {
     <>
     {/* Adding comment  */}
       <h1>Nazim Learning GitHub Actions</h1>
-      <h2>Complete course with 2 projects</h2>
+      <h2>Nazim is hero</h2>
     </>
   )
 }
