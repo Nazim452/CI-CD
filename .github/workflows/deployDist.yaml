@@ -1,6 +1,26 @@
 name: Deploy
-on: [push,workflow_dispatch]
+# on: [push,workflow_dispatch]
 
+# Triggered only if the changes in main branch - FIltering
+
+
+on:
+    push:
+        branches:
+          - main
+        paths-ignore:
+
+          # When anything changes in the following file then no need to re-deployment
+            - '.github/workflows/*'
+            - README.md
+    workflow_dispatch:
+      
+        
+
+
+
+
+# Method -2  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # on:
 #     - push
 #     - workflow_dispatch
